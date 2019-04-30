@@ -10,4 +10,3 @@ BOT for pokexp.com
 * Move until pokemon popup is opened
 * Open Developer console ("Ctrl + Maj + K" on Firefox)
 * Paste bot.js content in console and hit "Enter" key
-* type autoFight() in console and enjoy
