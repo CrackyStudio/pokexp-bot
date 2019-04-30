@@ -1,29 +1,36 @@
-var killed = false
-function autoFight(){
-    if(document.getElementsByClassName("di ").length > 0) {
-        document.getElementsByClassName("di ")[1].click();
-    }
-    if(document.getElementsByClassName("fight-button").length > 0) {
-        document.getElementsByClassName("fight-button")[0].click();
-    }
-    if(document.getElementsByClassName("pv").length > 0) {
-        if(document.getElementsByClassName("pv")[1].textContent > 0) {
-            if(document.getElementsByClassName("w12 ph1 pv1 bgt6 c tooltip attack tooltipstered").length > 0) {
-                document.getElementsByClassName("w12 ph1 pv1 bgt6 c tooltip attack tooltipstered")[1].click()
-                killed = true
-            }
-        } 
-    } else {
-        if (killed) {
-            if(document.getElementsByClassName("close is").length > 0) {
-                document.getElementsByClassName("close is")[0].click();
-                document.querySelector('.ui-minimalist-refresh').click();
-                killed = false
+function pxp_autoFight(){
+    diText = "di "
+    di = document.getElementsByClassName(diText);
+    if(di.length > 0) {
+        refreshText = '.ui-minimalist-refresh'
+        refresh = document.querySelector(refreshText)
+        dpText = 'Les Pokémon sauvages ont déjà été battus ou capturés. Attends la prochaine actualisation.'
+        if(document.body.innerHTML.toString().indexOf(dpText) > -1){
+            refresh.click();
+        };    
+        for(var i = 0; i < di.length; i++) {
+            if(di[i].className == diText) {
+                di[i].click();
+                fbText = "fight-button"
+                fb = document.getElementsByClassName(fbText)
+                pvText = "pv"
+                pv = document.getElementsByClassName(pvText)
+                if(fb.length > 0 && !pv.length > 0) {
+                    fb[0].click();  
+                } else {
+                    if(pv.length > 0) {
+                        if(pv[1].textContent > 0) {
+                            attacksText = "w12 ph1 pv1 bgt6 c tooltip attack tooltipstered"
+                            attacks = document.getElementsByClassName(attacksText)
+                            if(attacks.length > 0) {
+                                attacks[1].click()
+                            }
+                        } 
+                    }
+                }
             }
         }
     }
-    if(document.body.innerHTML.toString().indexOf('Les Pokémon sauvages ont déjà été battus ou capturés. Attends la prochaine actualisation.') > -1){
-        document.querySelector('.ui-minimalist-refresh').click();
-    };
-    setTimeout(autoFight, 1000)
+    refresh.click();
+    setTimeout(pxp_autoFight, 1000)
 }
