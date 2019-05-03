@@ -1,3 +1,27 @@
+(function addBot() {
+    let div = document.createElement('div');
+
+    div.className = 'Bot';
+    div.style = 'margin-left: 100px;background: #1e1e1e url(&quot;&quot;) no-repeat center 23px / 25px;color: white;display: flex;align-items: center;justify-content: center;/*! text-align: center; */flex-direction: row;border: 2px solid red;';
+    div.innerHTML = 'Bot';
+
+    document.getElementsByClassName('game-header--menu')[0].appendChild(div);
+})()
+
+$(".Bot").on('click', function(){
+    if (document.getElementsByClassName("Bot")[0].style.border == "2px solid red") {
+        $('.Bot').css({
+            'border' : '2px solid green',
+        });
+        bot(true)
+    } else {
+        $('.Bot').css({
+            'border' : '2px solid red',
+        });
+        bot(false)
+    }
+});
+
 function bot(isRunning) {
     isRunning ? autoFight(true) : autoFight(false)
 }
