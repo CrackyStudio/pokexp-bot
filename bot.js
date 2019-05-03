@@ -7,7 +7,7 @@
         pv = document.getElementsByClassName("pv")
         attacks = document.getElementsByClassName("w12 ph1 pv1 bgt6 c tooltip attack tooltipstered")
         refresh = document.querySelector(".ui-minimalist-refresh")
-        if(di.length > 0) { 
+        if(di.length > 0) {
             for(var i = 0; i < di.length; i++) {
                 if (di.length == 1) {
                     if(document.body.innerHTML.toString().indexOf("Les Pokémon sauvages ont déjà été battus ou capturés. Attends la prochaine actualisation.") > -1){
@@ -26,12 +26,12 @@
                         if(pv.length > 0) {
                             if(pv[1].textContent > 0) {
                                 if(attacks.length > 0) {
+                                    document.title = `PokExp | Bot: ${level[0].textContent}`;
                                     attacks[1].click()
                                     refresh.click();
                                 }
                             }
                         } else {
-                            document.title = `PokExp | Bot: ${level[0].textContent}`;
                             refresh.click();
                         }
                     }
