@@ -1,5 +1,9 @@
-    
-    function pxp_autoFight(){
+function bot(isRunning) {
+    isRunning ? autoFight(true) : autoFight(false)
+}
+
+function autoFight(isRunning = true){
+    if (isRunning) {
         level = document.getElementsByClassName("level");
         di = document.getElementsByClassName("di ");
         sec = document.getElementsByClassName("sec")
@@ -38,9 +42,10 @@
                 }
             }
         }
-        setTimeout(pxp_autoFight, 1000)
-    }(
+        ID = setTimeout(autoFight, 1000);
+    } else {
+        clearTimeout(ID)
+    }
+}
 
-    pxp_autoFight())
-
-// socket.emit('move',{private_key:KEY,direction:direct});
+// socket.emit('move', { private_key:KEY, direction: direct });
