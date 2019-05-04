@@ -9,10 +9,10 @@
 
     div.addEventListener("click", function() {
         if (div.style.border == "2px solid red") {
-            document.getElementsByClassName("Bot")[0].style.border = '2px solid green'
+            div.style.border = '2px solid green'
             bot(true)
         } else {
-            document.getElementsByClassName("Bot")[0].style.border = '2px solid false'
+            div.style.border = '2px solid false'
             bot(false)
         }
     });
