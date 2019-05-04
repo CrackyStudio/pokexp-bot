@@ -1,0 +1,17 @@
+{
+    "manifest_version": 2,
+    "name": "PokExp Bot",
+    "version": "1.0",
+    "description": "Add bot to PokExp",
+    "content_scripts": [
+      {
+        "matches": ["https://pokexp.com/"],
+        "js": ["bot.js"]
+      }
+    ],
+    "applications": {
+        "gecko": {
+           "id": "pokexpbotextension@example.org"
+        }
+    }
+}
