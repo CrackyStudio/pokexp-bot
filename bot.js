@@ -12,7 +12,7 @@
             div.style.border = '2px solid green'
             bot(true)
         } else {
-            div.style.border = '2px solid false'
+            div.style.border = '2px solid red'
             bot(false)
         }
     });
