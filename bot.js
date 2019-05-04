@@ -2,7 +2,7 @@
     let div = document.createElement('div');
 
     div.className = 'Bot';
-    div.style = 'margin-left: 100px;background: #1e1e1e url("https://github.com/CrackyStudio/pokexp-bot/blob/master/AF.png?raw=true") no-repeat center 23px / 25px;color: white;display: flex;align-items: center;justify-content: center;/*! text-align: center; */flex-direction: row;border: 2px solid red;';
+    div.style = 'margin-left: 100px;background: #1e1e1e url("https://github.com/CrackyStudio/pokexp-bot/blob/master/logo.png?raw=true") no-repeat center 23px / 25px;color: white;display: flex;align-items: center;justify-content: center;/*! text-align: center; */flex-direction: row;border: 2px solid red;';
 
     document.getElementsByClassName('game-header--menu')[0].appendChild(div);
     document.getElementsByClassName('game-header--name')[0].style = "padding-left: 50px"
