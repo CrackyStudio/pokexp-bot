@@ -16,6 +16,21 @@
             bot(false)
         }
     });
+    // v1.2
+    document.getElementById("menu-ui-button").click()
+    var list = document.getElementsByClassName("pokemon-info")
+    i = 0
+    for (let item of list) {       
+        if (item.innerText.replace(/\sNV.*/, "") == "AIRMURE") {
+            console.log(i)
+            document.getElementsByClassName("progress-radial")[i].click()
+            document.getElementsByClassName("ts2 tcs")[1].textContent // L'xp qui reste c'est ça
+            document.getElementById("menu-ui").style.visibility = "hidden"
+            document.getElementsByClassName("ui-content default-layout")[0].style.visibility = "hidden"
+        }
+        i++
+    }
+    //
 })()
 
 function bot(isRunning) {
@@ -28,6 +43,7 @@ function autoFight(isRunning = true){
         di = document.getElementsByClassName("di ");
         sec = document.getElementsByClassName("sec")
         fb = document.getElementsByClassName("fight-button")
+        pkm = document.getElementsByClassName("name")
         pv = document.getElementsByClassName("pv")
         attacks = document.getElementsByClassName("w12 ph1 pv1 bgt6 c tooltip attack tooltipstered")
         refresh = document.querySelector(".ui-minimalist-refresh")
@@ -50,7 +66,7 @@ function autoFight(isRunning = true){
                         if(pv.length > 0) {
                             if(pv[1].textContent > 0) {
                                 if(attacks.length > 0) {
-                                    document.title = `PokExp | Bot: ${level[0].textContent}`;
+                                    document.title = `${pkm[0].textContent}: ${level[0].textContent} - ${pv[0].textContent}pv`;
                                     attacks[1].click()
                                     refresh.click();
                                 }
